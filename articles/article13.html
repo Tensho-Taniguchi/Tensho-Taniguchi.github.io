@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>C Programming: Quick Reference</title>
+	<link href="../css/qr_reset.css" rel="stylesheet" />
+	<link href="../css/qr_styles.css" rel="stylesheet" />
+	<link href="../css/qr_articles.css" rel="stylesheet" />
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+
+<header>
+    <h1>C Programming: Quick Reference</h1>
+	<img src="../image/c-programming.jpg" alt="" />
+</header>
+<nav class="horizontal">
+  <ul>
+    <li><a href="../home.html">Home</a></li>
+    <li><a href="../reference1.html">Reference</a></li>
+    <li><a href="../listOfContents.html">List Of Contents</a></li>
+    <li><a href="../contactForm.html">Contact</a></li>
+  </ul>
+</nav>
+<article>
+	<h2>Dynamically Allocating 2D Arrays</h2>
+	<p>Can not simply dynamically allocate 2D
+	(or higher) array
+	Idea - allocate an array of pointers (first
+	dimension), make each pointer point
+	to a 1D array of the appropriate size
+	Can treat result as 2D array</p><br />
+	<img src="../image/sq2DArray.JPG" alt="" />
+<pre class="prettyprint">
+float **A; /* A is an array (pointer) of float
+pointers */
+int I;
+A = (float **) calloc(5,sizeof(float *));
+/* A is a 1D array (size 5) of float pointers */
+for (I = 0; I < 5; I++){
+   A[I] = (float *)calloc(4,sizeof(float));
+}
+/* Each element of array points to an array of 4 float variables */
+/* A[I][J] is the Jth entry in the array that the Ith member of A
+points to */
+</pre>
+<h2>Non-Square 2D Arrays</h2>
+No need to allocate square 2D arrays:<br />
+<img src="../image/nsq2DArray.JPG" alt="" />
+<pre class="prettyprint">
+float **A;
+int I;
+A = (float **) calloc(5,sizeof(float *));
+for (I = 0; I < 5; I++){
+   A[I] = (float **)calloc(I+1,sizeof(float));
+}
+</pre>
+</article>
+<footer>
+	<address>CISY 3223 Final Project by Tensho Taniguchi</address>
+</footer>
+</body>
+</html>

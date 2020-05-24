@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>C Programming: Quick Reference</title>
+	<link href="../css/qr_reset.css" rel="stylesheet" />
+	<link href="../css/qr_styles.css" rel="stylesheet" />
+	<link href="../css/qr_articles.css" rel="stylesheet" />
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+
+<header>
+    <h1>C Programming: Quick Reference</h1>
+	<img src="../image/c-programming.jpg" alt="" />
+</header>
+<nav class="horizontal">
+  <ul>
+    <li><a href="../home.html">Home</a></li>
+    <li><a href="../reference1.html">Reference</a></li>
+    <li><a href="../listOfContents.html">List Of Contents</a></li>
+    <li><a href="../contactForm.html">Contact</a></li>
+  </ul>
+</nav>
+<article>
+
+<h2>Array Allocation with calloc</h2><br />
+<ul>
+<li>prototype: void * calloc(size_t num, size_t esize)
+<ul>
+	<li>size_t is a special type used to indicate sizes, generally an unsigned int</li>
+	<li>num is the number of elements to be allocated in the array</li>
+	<li>esize is the size of the elements to be allocated (generally use sizeof and type to get correct value)</li>
+	<li>an amount of memory of size num*esize allocated on heap</li>
+	<li>calloc returns the address of the first byte of this memory (generally we cast the result to the appropriate type
+	if not enough memory is available, calloc returns NULL)</li>
+</ul>
+</li>
+</ul>
+<br />
+<h2>calloc Example</h2>
+<pre class="prettyprint">
+float *nums;
+int N;
+int I;
+printf(“Read how many numbers:”);
+scanf(“%d”,&N);
+nums = (float *) calloc(N, sizeof(float));
+/* nums is now an array of floats of size N */
+for (I = 0; I < N; I++) {
+printf(“Please enter number %d: “,I+1);
+scanf(“%f”,&(nums[I]));
+}
+/* Calculate average, etc. */
+</pre>
+<br />
+<h2>Array Allocation with malloc</h2><br />
+<ul>
+<li>prototype: void * malloc(size_t esize)
+<ul>
+	<li>similar to calloc, except we use it to allocate a single block of the given size esize</li>
+	<li>as with calloc, memory is allocated from heap</li>
+	<li>NULL returned if not enough memory available</li>
+	<li>memory must be released using free once the user is done</li>
+	<li>can perform the same function as calloc if we simply multiply the two arguments of calloc together</li>
+	<li>malloc(N * sizeof(float)) is equivalent tocalloc(N,sizeof(float))</li>
+</ul>
+</li>
+</ul>
+<br />
+<h2>Increasing Memory Size with realloc</h2><br />
+<ul>
+<li>prototype: void * realloc(void * ptr, size_t esize)
+<ul>
+	<li>ptr is a pointer to a piece of memory previously dynamically allocated
+	<li>esize is new size to allocate (no effect if esize is smaller than the size of the memory block ptr points to already)
+	<li>program allocates memory of size esize, then it copies the contents of the memory at ptr to the first part of the new piece of memory,
+	<li>finally, the old piece of memory is freed up
+</ul>
+</li>
+</ul>
+<br />
+<h2>realloc Example</h2>
+<pre class="prettyprint">
+float *nums;
+int I;
+nums = (float *) calloc(5, sizeof(float));
+/* nums is an array of 5 floating point values */
+for (I = 0; I < 5; I++)
+nums[I] = 2.0 * I;
+/* nums[0]=0.0, nums[1]=2.0, nums[2]=4.0, etc. */
+nums = (float *) realloc(nums,10 * sizeof(float));
+/* An array of 10 floating point values is allocated, the first
+5 floats from the old nums are copied as the first 5 floats
+of the new nums, then the old nums is released */
+</pre>
+<br />
+</article>
+<footer>
+	<address>CISY 3223 Final Project by Tensho Taniguchi</address>
+</footer>
+</body>
+</html>

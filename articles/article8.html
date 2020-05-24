@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>C Programming: Quick Reference</title>
+	<link href="../css/qr_reset.css" rel="stylesheet" />
+	<link href="../css/qr_styles.css" rel="stylesheet" />
+	<link href="../css/qr_articles.css" rel="stylesheet" />
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+
+<header>
+    <h1>C Programming: Quick Reference</h1>
+	<img src="../image/c-programming.jpg" alt="" />
+</header>
+<nav class="horizontal">
+  <ul>
+    <li><a href="../home.html">Home</a></li>
+    <li><a href="../reference1.html">Reference</a></li>
+    <li><a href="../listOfContents.html">List Of Contents</a></li>
+    <li><a href="../contactForm.html">Contact</a></li>
+  </ul>
+</nav>
+<article>
+	<h2>Arrays</h2>
+	<br />
+	<ul>
+		<li>Arrays fall under aggregate data type</li>
+		<li>Aggregate – More than 1</li>
+		<li>Arrays are collection of data that belong to same data type</li>
+		<li>Arrays are collection of homogeneous data</li>
+		<li>Array elements can be accessed by its position in the array called as index</li>
+		<li>Array index starts with zero</li>
+		<li>The last index in an array is N – 1 where N is the number of elements in a array</li>
+		<li>int a[5] is an array that stores 5 integers</li>
+		<li>a[0] is the first element where as a[4] is the fifth element</li>
+		<li>We can also have arrays with more than one dimension</li>
+		<li>float a[5][5] is a two dimensional array. It can store 5x5 = 25 floating point numbers</li>
+		<li>The bounds are a[0][0] to a[4][4]</li>
+	</ul>
+	<br />
+
+	<h2>Structures</h2>
+	<br />
+	<ul>
+		<li>Structures are user defined data types</li>
+		<li>It is a collection of heterogeneous data</li>
+		<li>It can have integer, float, double or character data in it</li>
+		<li>We can also have array of structures</li>
+	</ul>
+	<br />
+	<p>
+<pre>
+struct structname
+{
+	members;
+}element;
+</pre>
+	We can access element.members;
+	</p>
+	<br />
+	
+	<h2>Example structure</h2>
+<pre class="prettyprint">
+struct Person
+{
+	int id;
+	char name[5];
+}P1;
+	
+P1.id = 1;
+strcpy(P1.name, "Bubba");
+</pre>
+	<br />
+	
+	<h2>typedef</h2>
+	<br />
+	<ul>
+		<li>The typedef operator is used for creating alias of a data type</li>
+		<li>For example I have this statement "typedef int integer;"</li>
+		<li>Now I can use integer in place of int, i.e, instead of declaring int a; I can use integer a;</li>
+		<li>This is applied for structures too.</li>
+	</ul>
+<pre class="prettyprint">
+typedef int integer;
+integer a;
+</pre>
+</article>
+<footer>
+	<address>CISY 3223 Final Project by Tensho Taniguchi</address>
+</footer>
+</body>
+</html>

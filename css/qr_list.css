@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+form {
+	font: 14px/1.6 Verdana, Arial, sans-serif;
+	font-size: 1.2em;
+    width: 80%;
+	/*border*/
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+	/*margin*/
+	margin-top: 2.5%;
+	margin-bottom: 5%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+form p{
+  line-height: 20px;
+}
+
+#textM {
+	width: 100%;
+	font: 14px/1.6 Verdana, Arial, sans-serif;
+}
+
+#button {
+	text-align: center;
+	width: 100%;
+}
+#button{
+    color: #fff;
+    border: 1px solid orange;
+    background-color: orange;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 5px;
+    letter-spacing: 5px;
+    text-decoration: none;
+}
+#button:hover{
+    background-color: #fff;
+    border: 1px solid orange;
+    transition: background-color 0.5s ease-out;
+    transition: color 0.5s ease-out;
+    transition: border 0.5s ease-out;
+    color: orange;
+}

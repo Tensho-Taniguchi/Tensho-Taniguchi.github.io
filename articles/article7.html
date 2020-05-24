@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>C Programming: Quick Reference</title>
+	<link href="../css/qr_reset.css" rel="stylesheet" />
+	<link href="../css/qr_styles.css" rel="stylesheet" />
+	<link href="../css/qr_articles.css" rel="stylesheet" />
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+
+<header>
+    <h1>C Programming: Quick Reference</h1>
+	<img src="../image/c-programming.jpg" alt="" />
+</header>
+<nav class="horizontal">
+  <ul>
+    <li><a href="../home.html">Home</a></li>
+    <li><a href="../reference1.html">Reference</a></li>
+    <li><a href="../listOfContents.html">List Of Contents</a></li>
+    <li><a href="../contactForm.html">Contact</a></li>
+  </ul>
+</nav>
+<article>
+	<h2>Procedures</h2>
+	<br />
+	<ul>
+		<li>Procedure is a function whose return type is void</li>
+		<li>Functions will have return types int, char,double, float or even structs and arrays</li>
+		<li>Return type is the data type of the value that is
+		returned to the calling point after the called function execution completes</li>
+	</ul>
+	<br />
+
+	<h2>Functions and Parameters</h2>
+	<p>Syntax of function
+<pre>
+//Declaration section
+"Returntype" funname(parameter list);
+	
+//Definition section
+"Returntype" funname(parameter list)
+{
+	body of the function
+}
+</pre>
+	Function Call
+	<pre>
+	funname(parameter);
+	</pre>
+	</p>
+	
+	<h2>Example function</h2>
+<pre class="prettyprint">
+#include<stdio.h>
+void fun(int x); //declaration
+	
+int main()
+{
+	fun(10); //Call
+	return 0;
+}
+void fun(int x) //definition
+{
+	printf(“%d”,x);
+}
+</pre>
+	<br />
+	
+	<h2>Actual and Formal parameters</h2>
+	<ul>
+		<li>Actual parameters are those that are used during a function call</li>
+		<li>Formal parameters are those that are used in function definition and function declaration</li>
+	</ul>
+	<br />
+</article>
+<footer>
+	<address>CISY 3223 Final Project by Tensho Taniguchi</address>
+</footer>
+</body>
+</html>

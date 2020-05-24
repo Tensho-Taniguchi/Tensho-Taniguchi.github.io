@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>C Programming: Quick Reference</title>
+	<link href="../css/qr_reset.css" rel="stylesheet" />
+	<link href="../css/qr_styles.css" rel="stylesheet" />
+	<link href="../css/qr_articles.css" rel="stylesheet" />
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+
+<header>
+    <h1>C Programming: Quick Reference</h1>
+	<img src="../image/c-programming.jpg" alt="" />
+</header>
+<nav class="horizontal">
+  <ul>
+    <li><a href="../home.html">Home</a></li>
+    <li><a href="../reference1.html">Reference</a></li>
+    <li><a href="../listOfContents.html">List Of Contents</a></li>
+    <li><a href="../contactForm.html">Contact</a></li>
+  </ul>
+</nav>
+<article>
+
+	<h2>Call by Value</h2>
+	<p>Calling a function with parameters passed as values
+<pre class="prettyprint">
+int a=10;
+void fun(int a)
+fun(a);
+{
+	defn;
+}
+</pre>
+	Here fun(a) is a call by value.
+	Any modification done with in the function is local to it and will not
+	be effected outside the function
+	</p>
+	<br />
+	<h2>Call by reference</h2>
+	<p>Calling a function by passing pointers as parameters
+	(address of variables is passed instead of variables)
+<pre class="prettyprint">
+int a=1; 
+fun(&a);
+
+void fun(int *x){
+	defn;
+}
+</pre>
+	Any modification done to variable a will effect
+	outside the function also
+	</p>
+	<br />
+	<p>
+	Example program – Call by value
+<pre class="prettyprint">
+#include<stdio.h>
+void main()
+{
+	int a=10;
+	printf(“%d”,a); //a=10
+	fun(a);
+	printf(“%d”,a); //a=10
+}
+void fun(int x)
+{
+	printf(“%d”,x); //x=10
+	x++;
+	printf(“%d”,x); //x=11
+}
+</pre>
+	Example Program – Call by
+	reference
+<pre class="prettyprint">
+#include<stdio.h>
+void main()
+{
+	int a=10;
+	printf(“%d”,a); //a=10
+	fun(&a);
+	printf(“%d”,a); //a=11
+}
+void fun(int *x)
+{
+	printf(“%d”,*x); //x=10
+	*x++;
+	printf(“%d”,*x); //x=11
+}
+</pre>
+	<br />
+	• Call by value => copying value of variable in another
+	variable. So any change made in the copy will not
+	affect the original location.
+	<br />
+	• Call by reference => Creating link for the parameter
+	to the original location. Since the address is same,
+	changes to the parameter will refer to original
+	location and the value will be over written.
+	</p>
+</article>
+<footer>
+	<address>CISY 3223 Final Project by Tensho Taniguchi</address>
+</footer>
+</body>
+</html>

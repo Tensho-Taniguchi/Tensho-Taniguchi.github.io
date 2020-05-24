@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+article {
+  margin-top: 2.5%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: 200px;
+}
+
+article p{
+  line-height: 20px;
+}
+
+article li {
+    font-size: 14px;
+    margin-left: 10px;
+    list-style-type: disc;
+	line-height: 20px;
+}
+
+article ul li ul li {
+	list-style-type: none;
+}
+
+article table{
+	border: solid 1px gray; 
+	border-collapse: collapse;
+
+}
+
+article table th, article table td {
+	border: solid 1px gray; 
+	border-collapse: collapse;
+	padding: 10px;
+}
+
+article img{
+	width: 70%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

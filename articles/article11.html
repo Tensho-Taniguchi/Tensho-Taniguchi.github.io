@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>C Programming: Quick Reference</title>
+	<link href="../css/qr_reset.css" rel="stylesheet" />
+	<link href="../css/qr_styles.css" rel="stylesheet" />
+	<link href="../css/qr_articles.css" rel="stylesheet" />
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+
+<header>
+    <h1>C Programming: Quick Reference</h1>
+	<img src="../image/c-programming.jpg" alt="" />
+</header>
+<nav class="horizontal">
+  <ul>
+    <li><a href="../home.html">Home</a></li>
+    <li><a href="../reference1.html">Reference</a></li>
+    <li><a href="../listOfContents.html">List Of Contents</a></li>
+    <li><a href="../contactForm.html">Contact</a></li>
+  </ul>
+</nav>
+<article>
+	<h2>Dynamic Memory Allocation</h2>
+	<p>Allow the program to allocate some variables (notably arrays), during
+	the program, based on variables in program (dynamically)
+	Previous example: ask the user how many numbers to read, then
+	allocate array of appropriate size
+	Idea: user has routines to request some amount of memory, the user
+	then uses this memory, and returns it when they are done
+	memory allocated in the Data Heap</p>
+	<br />
+	<h2>Memory Management Functions</h2>
+	<ul>
+		<li>calloc - routine used to allocate arrays of memory</li>
+		<li>malloc - routine used to allocate a single block of memory</li>
+		<li>realloc - routine used to extend the amount of space allocated previously</li>
+	</ul>
+	<p>free - routine used to tell program a piece of memory no longer needed
+	note: memory allocated dynamicall</p>
+	<br />
+	<h2>Releasing Memory (free)</h2>
+	<p>prototype: void free(void *ptr)
+	memory at location pointed to by ptr is released (so we
+	could use it again in the future)
+	program keeps track of each piece of memory allocated by
+	where that memory starts
+	if we free a piece of memory allocated with calloc, the
+	entire array is freed (released)
+	results are problematic if we pass as address to free an
+	address of something that was not allocated dynamically
+	(or has already been freed)</p>
+	<br />
+	<h2>free Example</h2>
+<pre class="prettyprint">
+float *nums;
+int N;
+printf(“Read how many numbers:”);
+scanf(“%d”,&N);
+nums = (float *) calloc(N, sizeof(float));
+/* use array nums */
+/* when done with nums: */
+free(nums);
+/* would be an error to say it again - free(nums) */
+</pre>
+	<br />
+	<h2>The Importance of free</h2>
+<pre class="prettyprint">
+void problem() {
+float *nums;
+int N = 5;
+nums = (float *) calloc(N, sizeof(float));
+/* But no call to free with nums */
+} /* problem ends */
+</pre>
+	<p>When function problem called, space for array of size N allocated, when
+	function ends, variable nums goes away, but the space nums points at
+	(the array of size N) does not (allocated on the heap) - furthermore,
+	we have no way to figure out where it is)
+	Problem called memory leakage</p>
+
+</article>
+<footer>
+	<address>CISY 3223 Final Project by Tensho Taniguchi</address>
+</footer>
+</body>
+</html>

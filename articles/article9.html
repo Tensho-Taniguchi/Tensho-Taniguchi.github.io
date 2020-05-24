@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>C Programming: Quick Reference</title>
+	<link href="../css/qr_reset.css" rel="stylesheet" />
+	<link href="../css/qr_styles.css" rel="stylesheet" />
+	<link href="../css/qr_articles.css" rel="stylesheet" />
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+
+<header>
+    <h1>C Programming: Quick Reference</h1>
+	<img src="../image/c-programming.jpg" alt="" />
+</header>
+<nav class="horizontal">
+  <ul>
+    <li><a href="../home.html">Home</a></li>
+    <li><a href="../reference1.html">Reference</a></li>
+    <li><a href="../listOfContents.html">List Of Contents</a></li>
+    <li><a href="../contactForm.html">Contact</a></li>
+  </ul>
+</nav>
+<article>
+	<h2>Pointers</h2>
+	<ul>
+		<li>Pointer is a special variable that stores address of another variable</li>
+		<li>Addresses are integers. Hence pointer stores integer data</li>
+		<li>Size of pointer = size of int</li>
+		<li>Pointer that stores address of integer variable is called as integer pointer and is declared as</li>
+	</ul>
+<pre class="prettyprint">
+int *ip;
+</pre>
+
+	<ul>
+		<li>Pointers that store address of a double, char and
+		float are called as double pointer, character
+		pointer and float pointer respectively.
+		<ul>
+			<li>char *cp</li>
+			<li>float *fp</li>
+			<li>double *dp;</li>
+			<li>Assigning value to a pointer</li>
+		</ul>
+		</li>
+	</ul>
+<pre class="prettyprint">
+int *ip = &a; //a is an int already declared
+</pre>
+
+	<h2>Example using pointer</h2>
+<pre class="prettyprint">
+int a;
+a=10; //a stores 10
+int *ip;
+ip = &a; //ip stores address of a (say 1000)
+</pre>
+	<p>
+	ip : fetches 1000, *ip : fetches 10, and *Is called as dereferencing operator
+	</p>
+
+
+</article>
+<footer>
+	<address>CISY 3223 Final Project by Tensho Taniguchi</address>
+</footer>
+</body>
+</html>

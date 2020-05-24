@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>C Programming: Quick Reference</title>
+	<link href="../css/qr_reset.css" rel="stylesheet" />
+	<link href="../css/qr_styles.css" rel="stylesheet" />
+	<link href="../css/qr_articles.css" rel="stylesheet" />
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+
+<header>
+    <h1>C Programming: Quick Reference</h1>
+	<img src="../image/c-programming.jpg" alt="" />
+</header>
+<nav class="horizontal">
+  <ul>
+    <li><a href="../home.html">Home</a></li>
+    <li><a href="../reference1.html">Reference</a></li>
+    <li><a href="../listOfContents.html">List Of Contents</a></li>
+    <li><a href="../contactForm.html">Contact</a></li>
+  </ul>
+</nav>
+<article>
+	<h2>Overview of C</h2>
+	<br/>
+	<ul>
+ 		<li>C is developed by Dennis Ritchie</li>
+ 		<li>C is a structured programming language</li>
+ 		<li>C supports functions that enables easy
+		maintainability of code, by breaking large file into smaller modules </li>
+ 		<li>Comments in C provides easy readability</li>
+ 		<li>C is a powerful language</li>
+	</ul>		
+	<br/>
+	
+	<h2>Program structure</h2>
+	<br/>
+	<p>A sample C Program
+<pre class="prettyprint">
+#include<stdio.h>
+int main()
+{
+	--other statements
+	// Comments after double slash
+}
+</pre>
+	</p>
+	<br/>
+	
+
+	<h2>Header files</h2>
+	<br/>
+	<ul>
+		<li>The files that are specified in the include section is
+		called as header file</li>
+		<li>They describe and reference the precompiled files
+		that has some functions defined in them</li>
+		<li>We can call those functions in our program by
+		supplying parameters</li>
+		<li>Header file is given an extension .h</li>
+		<li>C Source file is given an extension .c</li>
+	</ul>		
+	<br/>
+
+	<h2>Writing the first program</h2>
+	<br />
+	<p>
+<pre class="prettyprint">
+#include<stdio.h>
+int main()
+{
+	printf("%s\n", "Hello World!");
+	return 0;
+}
+</pre>
+	This program prints Hello on the screen when we
+	execute it
+	</p>
+	<br />
+	
+	<h2>Running a C Program</h2>
+	<br />
+	<ol>
+		<li>Type a program</li>
+		<li>Save it</li>
+		<li>Compile the program – This will generate an exe file(executable)</li>
+		<li>Run the program (Actually the exe created out of compilation will run and not the .c file)</li>
+		<li>In different compiler we have different option for compiling and running. We give only the concepts.</li>
+	</ol>
+	<br />
+	
+	<h2>Comments in C</h2>
+	<br />
+	<ul>
+		<li>Single line comment</li>
+		<li>// (double slash)</li>
+		<li>Termination of comment is by pressing enter key</li>
+		<li>Multi line comment /*….…….*/ (This can span over to multiple lines)</li>
+	</ul>
+	<br />
+
+</article>
+<footer>
+	<address>CISY 3223 Final Project by Tensho Taniguchi</address>
+</footer>
+</body>
+</html>

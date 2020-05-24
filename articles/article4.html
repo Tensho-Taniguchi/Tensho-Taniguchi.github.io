@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>C Programming: Quick Reference</title>
+	<link href="../css/qr_reset.css" rel="stylesheet" />
+	<link href="../css/qr_styles.css" rel="stylesheet" />
+	<link href="../css/qr_articles.css" rel="stylesheet" />
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+
+<header>
+    <h1>C Programming: Quick Reference</h1>
+	<img src="../image/c-programming.jpg" alt="" />
+</header>
+<nav class="horizontal">
+  <ul>
+    <li><a href="../home.html">Home</a></li>
+    <li><a href="../reference1.html">Reference</a></li>
+    <li><a href="../listOfContents.html">List Of Contents</a></li>
+    <li><a href="../contactForm.html">Contact</a></li>
+  </ul>
+</nav>
+<article>
+	<p>Loops are used to repeat a block of code. 
+	Being able to have your program repeatedly execute a block of code 
+	is one of the most basic but useful tasks in programming.</p>
+	<br />
+
+	<h2>for loops</h2>
+	<p>The syntax of for loop is:
+	<pre>
+for(initialization; condition; update)
+{
+	set of statements
+}
+</pre>
+	Eg: Program to print Hello 10 times
+<pre class="prettyprint">
+for(i=0;i<10;i++)
+{
+	printf("%s\n", "Hello");
+}
+</pre>
+	</p>
+	
+	<h2>While loop</h2>
+	<p>The syntax for while loop
+<pre>
+while(condn)
+{
+	statements;
+}
+</pre>
+	Eg:
+<pre class="prettyprint">
+a=10;
+while(a != 0) {
+	printf("%d\n",a);
+	a--;
+}
+</pre>
+	</p>
+
+	<h2>Do While loop</h2>
+	<p>
+	The syntax of do while loop
+<pre>
+do
+{
+	set of statements
+}while(condn);
+</pre>
+	Eg:
+<pre class="prettyprint">
+i=10;
+do
+{
+	printf("%d\n",i);
+	i--;
+}while(i!=0)
+</pre>
+	</p>
+
+</article>
+<footer>
+	<address>CISY 3223 Final Project by Tensho Taniguchi</address>
+</footer>
+</body>
+</html>
